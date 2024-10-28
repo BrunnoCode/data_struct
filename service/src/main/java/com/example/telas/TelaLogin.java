@@ -3,18 +3,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.example.telas;
-
+import java.sql.*;
+import com.example.dal.ModuleConnect;
 /**
  *
  * @author bbotelho42
  */
 public class TelaLogin extends javax.swing.JFrame {
-
+    Connection connect = null;
+    PreparedStatement pst = null;
+    ResultSet res = null;
     /**
      * Creates new form TelaLogin
      */
     public TelaLogin() {
+
         initComponents();
+        connect = ModuleConnect.conector();
+        System.out.println(connect);
     }
 
     /**
